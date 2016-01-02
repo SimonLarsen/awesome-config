@@ -57,16 +57,9 @@ local layouts =
 {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
     awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
 }
 -- }}}
 
@@ -260,7 +253,7 @@ globalkeys = awful.util.table.join(
    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle") end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run -b") end),
+    awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run -b -fn \"Monospace-8\"") end),
 
     awful.key({ modkey }, "x",
               function ()
