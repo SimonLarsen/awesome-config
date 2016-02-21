@@ -250,6 +250,9 @@ globalkeys = awful.util.table.join(
 	-- Media keys
    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 9%+") end),
    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 9%-") end),
+   awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("quodlibet --previous") end),
+   awful.key({ }, "XF86AudioNext", function () awful.util.spawn("quodlibet --next") end),
+   awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("quodlibet --play-pause") end),
    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle") end),
 
     -- Prompt
@@ -262,8 +265,15 @@ globalkeys = awful.util.table.join(
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end),
+
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+
+	-- Screenshot
+	awful.key({}, "Print",
+		function() awful.util.spawn("scrot", false)
+		end
+	)
 )
 
 clientkeys = awful.util.table.join(
