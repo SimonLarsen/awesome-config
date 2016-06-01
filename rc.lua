@@ -253,7 +253,7 @@ globalkeys = awful.util.table.join(
    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("quodlibet --previous") end),
    awful.key({ }, "XF86AudioNext", function () awful.util.spawn("quodlibet --next") end),
    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("quodlibet --play-pause") end),
-   awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle") end),
+   awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -D pulse sset Master toggle") end),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run -b -fn \"Monospace-8\"") end),
