@@ -82,11 +82,17 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-mymainmenu = awful.menu({ items = { { "thunar", "thunar" },
-									{ "firefox", "firefox" },
-                                    { "terminal", terminal }
-                                  }
-                        })
+randrmenu = {
+    { "Office", "/home/simon/.screenlayout/office.sh" },
+    { "No screen", "/home/simon/.screenlayout/noscreen.sh" }
+}
+
+mymainmenu = awful.menu({items = {
+    { "thunar", "thunar" },
+    { "firefox", "firefox" },
+    { "randr", randrmenu },
+    { "terminal", terminal }
+}})
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -247,13 +253,14 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
-	-- Media keys
-   awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 9%+") end),
-   awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 9%-") end),
-   awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("quodlibet --previous") end),
-   awful.key({ }, "XF86AudioNext", function () awful.util.spawn("quodlibet --next") end),
-   awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("quodlibet --play-pause") end),
-   awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -D pulse sset Master toggle") end),
+    -- Media keys
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("pamixer -i 4") end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("pamixer -d 4") end),
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("pamixer -t") end),
+
+    awful.key({ }, "XF86AudioPlay", function() awful.util.spawn("cmus-remote --pause") end),
+    awful.key({ }, "XF86AudioPrev", function() awful.util.spawn("cmus-remote --prev") end),
+    awful.key({ }, "XF86AudioNext", function() awful.util.spawn("cmus-remote --next") end),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run -b -fn \"Monospace-8\"") end),
@@ -269,11 +276,11 @@ globalkeys = awful.util.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end),
 
-	-- Screenshot
-	awful.key({}, "Print",
-		function() awful.util.spawn("scrot", false)
-		end
-	)
+    -- Screenshot
+    awful.key({}, "Print",
+        function() awful.util.spawn("scrot", false)
+        end
+    )
 )
 
 clientkeys = awful.util.table.join(
