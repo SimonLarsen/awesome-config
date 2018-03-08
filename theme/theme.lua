@@ -1,23 +1,25 @@
 theme = {}
 basedir = "/home/simon/.config/awesome/theme/"
 
-theme.font          = "Tamsyn 8"
-
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
-
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
-
+theme.font = "Tamsyn 8"
 theme.border_width  = 2
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
+
+theme.fg_normal          = "#DDDDFF"
+theme.fg_focus           = "#EA6F81"
+theme.fg_urgent          = "#CC9393"
+
+theme.bg_normal          = "#1A1A1A"
+theme.bg_focus           = "#313131"
+theme.bg_urgent          = "#1A1A1A"
+
+theme.border_normal      = "#3F3F3F"
+theme.border_focus       = "#7F7F7F"
+theme.border_marked      = "#CC9393"
+
+theme.tasklist_bg_focus  = "#1A1A1A"
+theme.titlebar_bg_focus  = theme.bg_focus
+theme.titlebar_bg_normal = theme.bg_normal
+theme.titlebar_fg_focus  = theme.fg_focus
 
 -- There are other variable sets
 -- overriding the default one when
@@ -52,13 +54,13 @@ theme.titlebar_close_button_focus  = basedir .. "titlebar/close_focus.png"
 
 theme.titlebar_ontop_button_normal_inactive = basedir .. "titlebar/ontop_normal_inactive.png"
 theme.titlebar_ontop_button_focus_inactive  = basedir .. "titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active =   basedir .. "titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_active  =   basedir .. "titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_active   = basedir .. "titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_active    = basedir .. "titlebar/ontop_focus_active.png"
 
 theme.titlebar_sticky_button_normal_inactive = basedir .. "titlebar/sticky_normal_inactive.png"
 theme.titlebar_sticky_button_focus_inactive  = basedir .. "titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active =   basedir .. "titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_active  =   basedir .. "titlebar/sticky_focus_active.png"
+theme.titlebar_sticky_button_normal_active   = basedir .. "titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_active    = basedir .. "titlebar/sticky_focus_active.png"
 
 theme.titlebar_floating_button_normal_inactive = basedir .. "titlebar/floating_normal_inactive.png"
 theme.titlebar_floating_button_focus_inactive  = basedir .. "titlebar/floating_focus_inactive.png"
